@@ -25,7 +25,7 @@ def poly12925(input):
         hash = (hash * p + a + char) % 2**256
         hash = rol(hash, (char%INT_BITS))
     hash = hex((hash ^ ror(hash,64)) % 2**128)
-    return pad(hash[3:len(hash)],32)
+    return pad(hash[2:len(hash)],32)
 
 print(poly12925("a"))
 print(poly12925("b"))
